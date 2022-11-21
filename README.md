@@ -2,4 +2,7 @@
 
 [ 컴퓨터 구조 ]
 * Project1_Calculator 
-  * Write a RISC-V assembly language program that performs the 32-bit addition, subtraction, multiplication, and division.
+  * Write a RISC-V assembly language program that performs the 32-bit addition, subtraction, multiplication, and division. (w/o div, mul instructions)
+
+* Project2_Processor
+  * Write
