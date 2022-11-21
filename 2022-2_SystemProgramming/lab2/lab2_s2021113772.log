@@ -1,0 +1,38 @@
+    1  man man
+    2  pwd
+    3  ls -al
+    4  ls -ltr
+    5  gcc hello.c
+    6  ls
+    7  gcc helloworld.c 
+    8  cd ..
+    9  ls
+   10  mkdir lab2
+   11  cd lab2
+   12  cp /usr/include/stdio.h testfile
+   13  mv testfile test
+   14  ls -l test
+   15  ls -l test2
+   16  cp test test2
+   17  ls
+   18  rm test2
+   19  ls
+   20  cd ..
+   21  ls
+   22  cd lab2
+   23  less test
+   24  tail teset
+   25  tail test 
+   26  cd. .
+   27  cd ..
+   28  cd lab1
+   29  cd ..
+   30  cd lab2
+   31  history
+   32  echo "knu"
+   33  echo "knu" > listing
+   34  cat listing 
+   35  wc -l < listing 
+   36  cat test | more
+   37  history
+   38  history > lab2_s2021113772.log

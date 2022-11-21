@@ -1,0 +1,15 @@
+Note: breakpoint 1 also set at pc 0x555555555266.
+Breakpoint 2 at 0x555555555266: file ls1.c, line 29.
+Starting program: /home/ubuntu/lab4_s2021113772/ls1 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, do_ls (dirname=0x555555556004 ".") at ls1.c:29
+29	    if ((dir_ptr=opendir(dirname))==NULL)
+$5 = (DIR *) 0x0
+32	        while ((direntp = readdir(dir_ptr))!=NULL)
+__GI___readdir64 (dirp=0x5555555592a0) at ../sysdeps/unix/sysv/linux/readdir64.c:32
+32	../sysdeps/unix/sysv/linux/readdir64.c: No such file or directory.
+Continuing.
+[Inferior 1 (process 349555) exited normally]
+Already logging to gdb.ls1.log.
