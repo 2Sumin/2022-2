@@ -20,7 +20,6 @@ int mode = 0;
 int print_int = 2;
 
 // 1K-blocks    Used Available MyUse% 
-void print_units();
 void df(char *s, int always);
 
 int main(int argc, char *argv[]) 
@@ -36,61 +35,21 @@ int main(int argc, char *argv[])
         exit(ok);
     }
 
-    if (argc == 2) //default
-        print_int = 2;
+    if (argc == 2)  {//default 
+        mode = 'k';
+        printf("1K-blocks\tUsed\t\tAvailable\tMyUse%%\n");
+    }
   
     else {
         char *unit=strtok(argv[2], "-");
-        switch(unit[0]) {
-            case 'b':
-            case 'B':
-                print_int = 1;
-                break;
-            case 'k':
-            case 'K':
-                print_int = 2;
-                break;
-            case 'm':
-            case 'M':
-                print_int = 3;
-                break;
-            case 'g':
-            case 'G':
-                print_int = 4;
-                break;
-            default: 
-                break;
-        }
+        mode = unit[0];
+        printf("1%c-blocks\tUsed\t\tAvailable\tMyUse%%\n", unit[0]);
     }
-    print_units();
 
     df(argv[1], 0);
     exit(ok);
 }
 
-void print_units()
-{
-    switch(print_int) {
-        case 1: //b
-            mode = 'b';
-            printf("1B-blocks\tUsed\t\tAvailable\tMyUse%%\n");
-            break;
-        case 2: //k
-            mode = 'k';
-            printf("1K-blocks\tUsed\t\tAvailable\tMyUse%%\n");
-            break;
-        case 3: //m
-            mode = 'm';
-            printf("1M-blocks\tUsed\t\tAvailable\tMyUse%%\n");
-            break;
-        case 4: //g
-            mode = 'g';
-            printf("1G-blocks\tUsed\t\tAvailable\tMyUse%%\n");
-            break;
-        default:
-            break;
-    }
-}
 /*
 fsblkcnt_t f_blocks;   Total data blocks in filesystem 
 fsblkcnt_t f_bfree;   Free blocks in filesystem 
@@ -116,19 +75,19 @@ void df(char *s, int always) {
 
         // 단위 환산
         switch(mode) {
-            case 'b':
+            case 'b': case 'B':
                 break;
-            case 'k': //1KB = 1024B
+            case 'k': case 'K': //1KB = 1024B
                 blocks /= 1024;
                 used /= 1024;
                 avail /= 1024;
                 break;
-            case 'm': //1MB = 1024KB = 1024 * 1024B
+            case 'm': case 'M'://1MB = 1024KB = 1024 * 1024B
                 blocks /= 1024 * 1024;
                 used /= 1024 * 1024;
                 avail /= 1024 * 1024;
                 break;
-            case 'g': //1GB = 1024MB = 1024 * 1024 * 1024B
+            case 'g': case 'G'://1GB = 1024MB = 1024 * 1024 * 1024B
                 blocks /= 1024 * 1024 * 1024;
                 used /= 1024 * 1024 * 1024;
                 avail /= 1024 * 1024 * 1024;
