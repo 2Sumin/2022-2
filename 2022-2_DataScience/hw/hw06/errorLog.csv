@@ -1,0 +1,3 @@
+TypeError,'<=' not supported between instances of 'function' and 'function'
+TypeError,unsupported operand type(s) for /: 'int' and 'Table'
+TypeError,'<=' not supported between instances of 'function' and 'function'
